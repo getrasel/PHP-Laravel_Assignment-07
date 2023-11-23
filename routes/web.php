@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/',[UserController::class, "Hello"]);
-
-Route::get('/assignment7',[UserController::class, "assignment7"]);
+Route::get("/profile/{id?}", [ProfileController::class, "index"]);
+Route::get("/cookie", [ProfileController::class, "cookie"]);
